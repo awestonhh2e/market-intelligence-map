@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_81e6be8c5f5851a3179cea0687084662 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            top: 10px; 
+            left: 50px; 
+            width: 300px; 
+            height: 30px; 
+            z-index: 9999; 
+            background-color: white; 
+            border: 2px solid grey; 
+            border-radius: 5px; 
+            padding: 5px; 
+            font-size: 16px; 
+            font-weight: bold;">
+    German Hydrogen Projects Map
+</div>
+    
+            <div class="folium-map" id="map_81e6be8c5f5851a3179cea0687084662" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_81e6be8c5f5851a3179cea0687084662 = L.map(
+                "map_81e6be8c5f5851a3179cea0687084662",
+                {
+                    center: [51.1657, 10.4515],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5f2183b1d7c2c529be265ac3b8049068 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_81e6be8c5f5851a3179cea0687084662);
+        
+    
+            var marker_cluster_af28e84accfdb6a0899c8250d2501d80 = L.markerClusterGroup(
+                {}
+            );
+            map_81e6be8c5f5851a3179cea0687084662.addLayer(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var marker_aceeea965bbfa7c386d8d692e3add0b5 = L.marker(
+                [54.117, 13.733],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_6b0a3a4d4b20038194408a92c13595be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aceeea965bbfa7c386d8d692e3add0b5.setIcon(icon_6b0a3a4d4b20038194408a92c13595be);
+        
+    
+        var popup_7ebb362f4ff8fc48d3ce9923b1175af5 = L.popup({"maxWidth": 350});
+
+        
+            var html_6fe4c2bee7dc4752bd6e0b0153fc8895 = $(`<div id="html_6fe4c2bee7dc4752bd6e0b0153fc8895" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 0<br><b>company_name:</b> HH2E AG<br><b>project_name:</b> HH2E Lubmin<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Vorpommern<br><b>project_city:</b> Lubmin<br><b>Project Latitude:</b> 54.117<br><b>Project Longitude:</b> 13.733<br><b>date_online:</b> 2025<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 1000<br><b>initial_production_volume:</b> 6000<br><b>initial_tonnes_per_MW:</b> 60<br><b>electrolysis_technology:</b> ALK<br><b>electrolysis_supplier:</b> Nel<br><b>project_capex:</b> 300<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.hh2e.de/en/<br><b>initial_capacity_reference:</b> https://www.foresight.group/news/hh2e-and-foresight-group-are-pleased-to-announce-the-completion-of-funding-for-the-development-phase-of-the-green-hydrogen-production-site-in-lubmin-germany<br><b>projected_capacity_reference:</b> https://www.foresight.group/news/hh2e-and-foresight-group-are-pleased-to-announce-the-completion-of-funding-for-the-development-phase-of-the-green-hydrogen-production-site-in-lubmin-germany<br><b>electrolyser_supplier_reference:</b> https://www.hh2e.de/en/unkategorisiert/hh2e-confirms-purchase-of-120mw-of-electrolyzer-equipment-from-nel/<br><b>gas_pipeline_reference:</b> https://www.foresight.group/news/hh2e-and-foresight-group-are-pleased-to-announce-the-completion-of-funding-for-the-development-phase-of-the-green-hydrogen-production-site-in-lubmin-germany<br><b>hydrogen_pipeline_reference:</b> https://www.foresight.group/news/hh2e-and-foresight-group-are-pleased-to-announce-the-completion-of-funding-for-the-development-phase-of-the-green-hydrogen-production-site-in-lubmin-germany<br><b>Unnamed: 26:</b> 1.0<br></div></div>`)[0];
+            popup_7ebb362f4ff8fc48d3ce9923b1175af5.setContent(html_6fe4c2bee7dc4752bd6e0b0153fc8895);
+        
+
+        marker_aceeea965bbfa7c386d8d692e3add0b5.bindPopup(popup_7ebb362f4ff8fc48d3ce9923b1175af5)
+        ;
+
+        
+    
+    
+            var marker_8aa52af3b0ad103c6dba95a8c376a483 = L.marker(
+                [51.1195374925335, 12.5030656955765],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_06e03dd4a5941a766f2180867caae4c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8aa52af3b0ad103c6dba95a8c376a483.setIcon(icon_06e03dd4a5941a766f2180867caae4c3);
+        
+    
+        var popup_096176b629871a59d6073df98be4940f = L.popup({"maxWidth": 350});
+
+        
+            var html_2aefc81c78377ebecbd6e1967cca26f3 = $(`<div id="html_2aefc81c78377ebecbd6e1967cca26f3" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 1<br><b>company_name:</b> HH2E AG<br><b>project_name:</b> HH2E Thierbach<br><b>project_country:</b> DE<br><b>project_region:</b> Saxony<br><b>project_city:</b> Borna<br><b>Project Latitude:</b> 51.1195374925335<br><b>Project Longitude:</b> 12.5030656955765<br><b>date_online:</b> 2025<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 1000<br><b>initial_production_volume:</b> 7000<br><b>initial_tonnes_per_MW:</b> 70<br><b>electrolysis_technology:</b> ALK<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> 300<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.hh2e.de/en/<br><b>initial_capacity_reference:</b> https://www.hh2e.de/en/hydrogen/hh2e-announces-its-second-major-green-hydrogen-production-project-in-germany/<br><b>projected_capacity_reference:</b> https://www.hh2e.de/en/hydrogen/hh2e-announces-its-second-major-green-hydrogen-production-project-in-germany/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_096176b629871a59d6073df98be4940f.setContent(html_2aefc81c78377ebecbd6e1967cca26f3);
+        
+
+        marker_8aa52af3b0ad103c6dba95a8c376a483.bindPopup(popup_096176b629871a59d6073df98be4940f)
+        ;
+
+        
+    
+    
+            var marker_389f7a1efbdbb642aec9ee61ae92f5fc = L.marker(
+                [53.91908755, 12.277159388175352],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_9ca79e56b54be8226454cb7c9b490bec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_389f7a1efbdbb642aec9ee61ae92f5fc.setIcon(icon_9ca79e56b54be8226454cb7c9b490bec);
+        
+    
+        var popup_26dc57716bd891ca5049a7f70a421cb8 = L.popup({"maxWidth": 350});
+
+        
+            var html_c566c1db3080bdef9d8f7f00d76317ab = $(`<div id="html_c566c1db3080bdef9d8f7f00d76317ab" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 2<br><b>company_name:</b> H2APEX<br><b>project_name:</b> H2ERO Rostock-Laage<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Western Pomerania<br><b>project_city:</b> Rostock-Laage<br><b>date_online:</b> 2027<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 7500<br><b>initial_tonnes_per_MW:</b> 75<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> 200<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.h2apex.com<br><b>initial_capacity_reference:</b> https://ir.h2apex.com/en/financial-information/corporate-news-detail?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=559&cHash=23dd5c825f6c5dfc8af7eb6bdfad7693<br><b>projected_capacity_reference:</b> https://ir.h2apex.com/en/financial-information/corporate-news-detail?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=559&cHash=23dd5c825f6c5dfc8af7eb6bdfad7693<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> https://hydrogen-central.com/germany-green-hydrogen-made-in-mv-h2apex-receives-grant-for-construction-of-a-100-mw-electrolysis-plant-in-rostock-laage/<br><b>hydrogen_pipeline_reference:</b> https://hydrogen-central.com/germany-green-hydrogen-made-in-mv-h2apex-receives-grant-for-construction-of-a-100-mw-electrolysis-plant-in-rostock-laage/<br></div></div>`)[0];
+            popup_26dc57716bd891ca5049a7f70a421cb8.setContent(html_c566c1db3080bdef9d8f7f00d76317ab);
+        
+
+        marker_389f7a1efbdbb642aec9ee61ae92f5fc.bindPopup(popup_26dc57716bd891ca5049a7f70a421cb8)
+        ;
+
+        
+    
+    
+            var marker_af5479252a59fb15eddac2ad1a58e359 = L.marker(
+                [54.1302986718926, 13.6264433712111],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_886da25a03d469ee6323f5719a7cd702 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_af5479252a59fb15eddac2ad1a58e359.setIcon(icon_886da25a03d469ee6323f5719a7cd702);
+        
+    
+        var popup_6770f2d31a1dcb0a2815beb6e0f9720e = L.popup({"maxWidth": 350});
+
+        
+            var html_a8a51835a1eb8ba10d55b842d49ac358 = $(`<div id="html_a8a51835a1eb8ba10d55b842d49ac358" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 3<br><b>company_name:</b> H2APEX<br><b>project_name:</b> Lubmin Hydrogen Power Plant<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Western Pomerania<br><b>project_city:</b> Lubmin<br><b>Project Latitude:</b> 54.1302986718926<br><b>Project Longitude:</b> 13.6264433712111<br><b>date_online:</b> No Information<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> No Information<br><b>projected_electrolyser_capacity_MW:</b> 600<br><b>initial_production_volume:</b> 43000<br><b>initial_tonnes_per_MW:</b> 71<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.h2apex.com<br><b>initial_capacity_reference:</b> No Information<br><b>projected_capacity_reference:</b> https://www.h2-region-ost.de/en/infrastruktur/innovationsprojekte/apex-wasserstoffprojekte-der-region<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.h2-region-ost.de/en/infrastruktur/innovationsprojekte/apex-wasserstoffprojekte-der-region<br></div></div>`)[0];
+            popup_6770f2d31a1dcb0a2815beb6e0f9720e.setContent(html_a8a51835a1eb8ba10d55b842d49ac358);
+        
+
+        marker_af5479252a59fb15eddac2ad1a58e359.bindPopup(popup_6770f2d31a1dcb0a2815beb6e0f9720e)
+        ;
+
+        
+    
+    
+            var marker_3cee9c5b8d205730e663a5031c104d88 = L.marker(
+                [52.48255651, 7.299667812],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_9d7bf4abf828a0129baa44efc072c347 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3cee9c5b8d205730e663a5031c104d88.setIcon(icon_9d7bf4abf828a0129baa44efc072c347);
+        
+    
+        var popup_3a8e03c196546f5f026b8ac6220c7507 = L.popup({"maxWidth": 350});
+
+        
+            var html_8e4eaf26428d76fab53b57add3b79d0d = $(`<div id="html_8e4eaf26428d76fab53b57add3b79d0d" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 4<br><b>company_name:</b> RWE<br><b>project_name:</b> GET H2 Nukleus<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Lingen<br><b>Project Latitude:</b> 52.48255651<br><b>Project Longitude:</b> 7.299667812<br><b>date_online:</b> 2025<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 300<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> ITM Power, Sunfire<br><b>project_capex:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.rwe.com/<br><b>initial_capacity_reference:</b> https://www.linde-engineering.com/news-and-events/press-releases/2024/linde-supports-rwe-project-for-large-scale-hydrogen-production-in-lingen<br><b>projected_capacity_reference:</b> https://www.rwe.com/en/press/rwe-ag/2024-07-15-german-and-state-governments-grant-funding-for-large-hydrogen-projects-by-rwe/<br><b>electrolyser_supplier_reference:</b> https://www.rwe.com/en/press/rwe-generation/2024-09-11-rwe-commissions-sunfire-and-bilfinger-to-build-third-electrolyserplant-for-geth2-nukleus/<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.rwe.com/en/press/rwe-ag/2024-07-15-german-and-state-governments-grant-funding-for-large-hydrogen-projects-by-rwe/<br></div></div>`)[0];
+            popup_3a8e03c196546f5f026b8ac6220c7507.setContent(html_8e4eaf26428d76fab53b57add3b79d0d);
+        
+
+        marker_3cee9c5b8d205730e663a5031c104d88.bindPopup(popup_3a8e03c196546f5f026b8ac6220c7507)
+        ;
+
+        
+    
+    
+            var marker_1b35ff30670cac344d912569ab8eb060 = L.marker(
+                [54.2023436057572, 7.92126860886418],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_2ca993ccd8caa39401b8b8944836e1bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b35ff30670cac344d912569ab8eb060.setIcon(icon_2ca993ccd8caa39401b8b8944836e1bc);
+        
+    
+        var popup_c9032da46de5bea03f92935905346d63 = L.popup({"maxWidth": 350});
+
+        
+            var html_6b5208e79b4a6bd62911a25bf7d09b7f = $(`<div id="html_6b5208e79b4a6bd62911a25bf7d09b7f" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 5<br><b>company_name:</b> RWE<br><b>project_name:</b> AquaVentus<br><b>project_country:</b> DE<br><b>project_region:</b> North Sea<br><b>project_city:</b> Helgoland<br><b>Project Latitude:</b> 54.2023436057572<br><b>Project Longitude:</b> 7.92126860886418<br><b>date_online:</b> By 2035<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> Part of a larger 10 GW project, but specific initial capacity not detailed<br><b>projected_electrolyser_capacity_MW:</b> 10000<br><b>initial_production_volume:</b> 1000000<br><b>initial_tonnes_per_MW:</b> 100<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://group.vattenfall.com/<br><b>initial_capacity_reference:</b> https://cms.law/en/int/expert-guides/cms-expert-guide-to-hydrogen/germany<br><b>projected_capacity_reference:</b> https://cms.law/en/int/expert-guides/cms-expert-guide-to-hydrogen/germany<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> https://cms.law/en/int/expert-guides/cms-expert-guide-to-hydrogen/germany<br><b>hydrogen_pipeline_reference:</b> https://cms.law/en/int/expert-guides/cms-expert-guide-to-hydrogen/germany<br></div></div>`)[0];
+            popup_c9032da46de5bea03f92935905346d63.setContent(html_6b5208e79b4a6bd62911a25bf7d09b7f);
+        
+
+        marker_1b35ff30670cac344d912569ab8eb060.bindPopup(popup_c9032da46de5bea03f92935905346d63)
+        ;
+
+        
+    
+    
+            var marker_284c2a53670e1b8ff5d409958810e4d8 = L.marker(
+                [54.14507287, 12.1093972362866],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_0dc39f0679a3971181de01dc8d8bef43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_284c2a53670e1b8ff5d409958810e4d8.setIcon(icon_0dc39f0679a3971181de01dc8d8bef43);
+        
+    
+        var popup_dc8cfab20a9f8768c41ab5e843811d9a = L.popup({"maxWidth": 350});
+
+        
+            var html_48024aa55acf46aa07e2c28e82e77f9c = $(`<div id="html_48024aa55acf46aa07e2c28e82e77f9c" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 6<br><b>company_name:</b> RWE<br><b>project_name:</b> HyTechHafen Rostock<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Western Pomerania<br><b>project_city:</b> Rostock<br><b>Project Latitude:</b> 54.14507287<br><b>Project Longitude:</b> 12.1093972362866<br><b>date_online:</b> 2027<br><b>project_status:</b> Feasibility Study<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.rwe.com/<br><b>initial_capacity_reference:</b> https://www.rwe.com/en/press/rwe-ag/2024-07-15-german-and-state-governments-grant-funding-for-large-hydrogen-projects-by-rwe/<br><b>projected_capacity_reference:</b> https://www.rwe.com/en/press/rwe-ag/2024-07-15-german-and-state-governments-grant-funding-for-large-hydrogen-projects-by-rwe/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.rwe.com/en/press/rwe-ag/2024-07-15-german-and-state-governments-grant-funding-for-large-hydrogen-projects-by-rwe/<br></div></div>`)[0];
+            popup_dc8cfab20a9f8768c41ab5e843811d9a.setContent(html_48024aa55acf46aa07e2c28e82e77f9c);
+        
+
+        marker_284c2a53670e1b8ff5d409958810e4d8.bindPopup(popup_dc8cfab20a9f8768c41ab5e843811d9a)
+        ;
+
+        
+    
+    
+            var marker_ec5fe382b04b383c3aa62c1ce8b53b19 = L.marker(
+                [50.8605615564851, 6.98058161550651],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_3a21c97f2d54eb9479fd2990908f254b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ec5fe382b04b383c3aa62c1ce8b53b19.setIcon(icon_3a21c97f2d54eb9479fd2990908f254b);
+        
+    
+        var popup_2b1f9faf5ac2768fba254522060d09d2 = L.popup({"maxWidth": 350});
+
+        
+            var html_60c0340aebc24677ab402c898bf02ab8 = $(`<div id="html_60c0340aebc24677ab402c898bf02ab8" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 7<br><b>company_name:</b> Shell<br><b>project_name:</b> REFHYNE 2<br><b>project_country:</b> DE<br><b>project_region:</b> North Rhine-Westphalia<br><b>project_city:</b> Wesseling<br><b>Project Latitude:</b> 50.8605615564851<br><b>Project Longitude:</b> 6.98058161550651<br><b>date_online:</b> 2027<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 6500<br><b>initial_tonnes_per_MW:</b> 65<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> ITM Power <br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.shell.com/<br><b>initial_capacity_reference:</b> https://www.argusmedia.com/en/news-and-insights/latest-market-news/2592874-europe-sees-record-hydrogen-fids<br><b>projected_capacity_reference:</b> https://www.argusmedia.com/en/news-and-insights/latest-market-news/2592874-europe-sees-record-hydrogen-fids<br><b>electrolyser_supplier_reference:</b> https://www.chemanalyst.com/NewsAndDeals/NewsDetails/shell-partners-with-itm-power-for-refhyne-ii-electrolyser-supply-29656<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_2b1f9faf5ac2768fba254522060d09d2.setContent(html_60c0340aebc24677ab402c898bf02ab8);
+        
+
+        marker_ec5fe382b04b383c3aa62c1ce8b53b19.bindPopup(popup_2b1f9faf5ac2768fba254522060d09d2)
+        ;
+
+        
+    
+    
+            var marker_5d231dfc2e9633db1eac5d0ee3a7718e = L.marker(
+                [52.1503721, 10.3593147],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_cfaae9a3d0324ea26ebd763c497c8a31 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5d231dfc2e9633db1eac5d0ee3a7718e.setIcon(icon_cfaae9a3d0324ea26ebd763c497c8a31);
+        
+    
+        var popup_b6203fa5d1dd4c11ddf9cc373d09b973 = L.popup({"maxWidth": 350});
+
+        
+            var html_67799bcc020386f23267f7226692b7bc = $(`<div id="html_67799bcc020386f23267f7226692b7bc" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 8<br><b>company_name:</b> Salzgitter AG<br><b>project_name:</b> SALCOS® Green Hydrogen Plant<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Salzgitter<br><b>date_online:</b> 2026<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 9000<br><b>initial_tonnes_per_MW:</b> 90<br><b>electrolysis_technology:</b> ALK (Alkaline)<br><b>electrolysis_supplier:</b> Andritz Group<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.salzgitter-ag.com/<br><b>initial_capacity_reference:</b> https://www.andritz.com/newsroom-en/metals/2023-09-20-salzgitter-group<br><b>projected_capacity_reference:</b> https://www.andritz.com/newsroom-en/metals/2023-09-20-salzgitter-group<br><b>electrolyser_supplier_reference:</b> https://www.salzgitter-ag.com/en/newsroom/press-releases/details/salzgitter-orders-one-of-europes-largest-green-hydrogen-plants-from-andritz-21046.html<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.salzgitter-ag.com/en/newsroom/press-releases/details/salzgitter-ag-now-inviting-tenders-for-hydrogen-requirements-for-the-first-time-21912.html<br></div></div>`)[0];
+            popup_b6203fa5d1dd4c11ddf9cc373d09b973.setContent(html_67799bcc020386f23267f7226692b7bc);
+        
+
+        marker_5d231dfc2e9633db1eac5d0ee3a7718e.bindPopup(popup_b6203fa5d1dd4c11ddf9cc373d09b973)
+        ;
+
+        
+    
+    
+            var marker_c00a652f811ec5b5371d766a0777df7f = L.marker(
+                [53.5278793, 8.106301],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_6d8d7b1acc61b31fc4bd79bc518ff803 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c00a652f811ec5b5371d766a0777df7f.setIcon(icon_6d8d7b1acc61b31fc4bd79bc518ff803);
+        
+    
+        var popup_0988f3e21504afce4b81de4abd8ea4a9 = L.popup({"maxWidth": 350});
+
+        
+            var html_dd4410f5af188ebdec2c475659f61e46 = $(`<div id="html_dd4410f5af188ebdec2c475659f61e46" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 9<br><b>company_name:</b> Salzgitter AG<br><b>project_name:</b> Uniper Green Hydrogen Supply Project<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Wilhelmshaven<br><b>date_online:</b> 2028<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 200<br><b>projected_electrolyser_capacity_MW:</b> 1000<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.salzgitter-ag.com/<br><b>initial_capacity_reference:</b> https://www.uniper.energy/news/salzgitter-ag-and-uniper-se-sign-pre-contract-for-the-supply-and-purchase-of-green-hydrogen<br><b>projected_capacity_reference:</b> https://www.uniper.energy/news/salzgitter-ag-and-uniper-se-sign-pre-contract-for-the-supply-and-purchase-of-green-hydrogen<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> https://www.uniper.energy/news/salzgitter-ag-and-uniper-se-sign-pre-contract-for-the-supply-and-purchase-of-green-hydrogen<br><b>hydrogen_pipeline_reference:</b> https://www.uniper.energy/news/salzgitter-ag-and-uniper-se-sign-pre-contract-for-the-supply-and-purchase-of-green-hydrogen<br></div></div>`)[0];
+            popup_0988f3e21504afce4b81de4abd8ea4a9.setContent(html_dd4410f5af188ebdec2c475659f61e46);
+        
+
+        marker_c00a652f811ec5b5371d766a0777df7f.bindPopup(popup_0988f3e21504afce4b81de4abd8ea4a9)
+        ;
+
+        
+    
+    
+            var marker_5844e000534db61d2d14f5641fefc72c = L.marker(
+                [49.2470888, 6.8640289],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_6321213d244108ee3d1e21e8e3113311 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5844e000534db61d2d14f5641fefc72c.setIcon(icon_6321213d244108ee3d1e21e8e3113311);
+        
+    
+        var popup_5a8a091708bd1aeb3ad6a32f1d7b19f5 = L.popup({"maxWidth": 350});
+
+        
+            var html_99ed6393d81ecf9204670af8dc88c6e8 = $(`<div id="html_99ed6393d81ecf9204670af8dc88c6e8" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 10<br><b>company_name:</b> Iqony GmbH<br><b>project_name:</b> HydroHub Fenne<br><b>project_country:</b> DE<br><b>project_region:</b> Saarland<br><b>project_city:</b> Völklingen-Fenne<br><b>date_online:</b> 2027<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> Not explicitly stated in MW, but producing up to 8,200 t of hydrogen per year<br><b>projected_electrolyser_capacity_MW:</b> Not explicitly stated in MW, but producing up to 8,200 t of hydrogen per year<br><b>initial_production_volume:</b> 8200<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.iqony.energy/en/<br><b>initial_capacity_reference:</b> No direct MW capacity reference available, but production volume mentioned<br><b>projected_capacity_reference:</b> No direct MW capacity reference available, but production volume mentioned<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_5a8a091708bd1aeb3ad6a32f1d7b19f5.setContent(html_99ed6393d81ecf9204670af8dc88c6e8);
+        
+
+        marker_5844e000534db61d2d14f5641fefc72c.bindPopup(popup_5a8a091708bd1aeb3ad6a32f1d7b19f5)
+        ;
+
+        
+    
+    
+            var marker_90fc7b7a8baeae8351860680fe8346d5 = L.marker(
+                [53.550341, 10.000654],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_5fcbbbcb5497d57dbd14e6fe4dd0d367 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_90fc7b7a8baeae8351860680fe8346d5.setIcon(icon_5fcbbbcb5497d57dbd14e6fe4dd0d367);
+        
+    
+        var popup_0121ce88e1e29ccf4a3263040699ae0e = L.popup({"maxWidth": 350});
+
+        
+            var html_989fc47b7694748c5facd8157ba7e437 = $(`<div id="html_989fc47b7694748c5facd8157ba7e437" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 11<br><b>company_name:</b> Hamburg Green Hydrogen Hub (HGHH)<br><b>project_name:</b> Hamburg Green Hydrogen Hub<br><b>project_country:</b> DE<br><b>project_region:</b> Hamburg<br><b>project_city:</b> Hamburg<br><b>date_online:</b> 2027<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> Siemens<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.hghh.de/<br><b>initial_capacity_reference:</b> https://www.foresight.group/news/hydrogen-september-market-update<br><b>projected_capacity_reference:</b> https://www.foresight.group/news/hydrogen-september-market-update<br><b>electrolyser_supplier_reference:</b> https://www.luxcara.com/press-releases/hamburg-green-hydrogen-hub-awards-contract-for-100-mw-electrolyzer-to-siemens-energy<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.foresight.group/news/hydrogen-september-market-update<br></div></div>`)[0];
+            popup_0121ce88e1e29ccf4a3263040699ae0e.setContent(html_989fc47b7694748c5facd8157ba7e437);
+        
+
+        marker_90fc7b7a8baeae8351860680fe8346d5.bindPopup(popup_0121ce88e1e29ccf4a3263040699ae0e)
+        ;
+
+        
+    
+    
+            var marker_1c726280fedc216d32e982daf690b3ad = L.marker(
+                [52.5586047735969, 7.31019332083824],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_b36815378f976801cb8bc8de6acb9bad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1c726280fedc216d32e982daf690b3ad.setIcon(icon_b36815378f976801cb8bc8de6acb9bad);
+        
+    
+        var popup_ce303bcc67388178ff33ea7e449b3d3f = L.popup({"maxWidth": 350});
+
+        
+            var html_33997ce89b06c56f2da3e639c1477af1 = $(`<div id="html_33997ce89b06c56f2da3e639c1477af1" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 12<br><b>company_name:</b> BP<br><b>project_name:</b> Lingen Green Hydrogen<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Lingen<br><b>Project Latitude:</b> 52.5586047735969<br><b>Project Longitude:</b> 7.31019332083824<br><b>date_online:</b> 2027<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 500<br><b>initial_production_volume:</b> 9000<br><b>initial_tonnes_per_MW:</b> 90<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.bp.com/<br><b>initial_capacity_reference:</b> https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-and-orsted-to-create-renewable-hydrogen-partnership-in-germany.html<br><b>projected_capacity_reference:</b> https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-and-orsted-to-create-renewable-hydrogen-partnership-in-germany.html<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> https://www.bp.com/en/global/corporate/news-and-insights/press-releases/bp-and-orsted-to-create-renewable-hydrogen-partnership-in-germany.html<br></div></div>`)[0];
+            popup_ce303bcc67388178ff33ea7e449b3d3f.setContent(html_33997ce89b06c56f2da3e639c1477af1);
+        
+
+        marker_1c726280fedc216d32e982daf690b3ad.bindPopup(popup_ce303bcc67388178ff33ea7e449b3d3f)
+        ;
+
+        
+    
+    
+            var marker_5237aa1bdf8e253ff6fa6c533d960d41 = L.marker(
+                [48.7999036, 9.7977584],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_8e43d265b5a024830ecf7670355c0ea9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5237aa1bdf8e253ff6fa6c533d960d41.setIcon(icon_8e43d265b5a024830ecf7670355c0ea9);
+        
+    
+        var popup_84ae84ac6407f4a760b3fd52cd8ea237 = L.popup({"maxWidth": 350});
+
+        
+            var html_046e02f8fdfc2a3e05c11bb406275ad2 = $(`<div id="html_046e02f8fdfc2a3e05c11bb406275ad2" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 13<br><b>company_name:</b> Lhyfe<br><b>project_name:</b> Schwäbisch Gmünd Green Hydrogen Plant<br><b>project_country:</b> DE<br><b>project_region:</b> Baden-Württemberg<br><b>project_city:</b> Schwäbisch Gmünd<br><b>date_online:</b> 2024 (second half)<br><b>project_status:</b> Under construction<br><b>initial_electrolyser_capacity_MW:</b> 10<br><b>projected_electrolyser_capacity_MW:</b> 10<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.lhyfe.com/<br><b>initial_capacity_reference:</b> https://www.lhyfe.com/press/lhyfe-builds-the-largest-commercial-green-hydrogen-production-plant-in-germany-making-green-hydrogen-available-to-the-broad-market-for-the-first-time/<br><b>projected_capacity_reference:</b> https://www.lhyfe.com/press/lhyfe-builds-the-largest-commercial-green-hydrogen-production-plant-in-germany-making-green-hydrogen-available-to-the-broad-market-for-the-first-time/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_84ae84ac6407f4a760b3fd52cd8ea237.setContent(html_046e02f8fdfc2a3e05c11bb406275ad2);
+        
+
+        marker_5237aa1bdf8e253ff6fa6c533d960d41.bindPopup(popup_84ae84ac6407f4a760b3fd52cd8ea237)
+        ;
+
+        
+    
+    
+            var marker_049c420f0ae05166d1a887cd8fb41e6c = L.marker(
+                [49.4735915, 6.3874514],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_3ab192ceccf1834876a0e1fae81acafe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_049c420f0ae05166d1a887cd8fb41e6c.setIcon(icon_3ab192ceccf1834876a0e1fae81acafe);
+        
+    
+        var popup_b1e04633274046e0bbde5ee5ef81f441 = L.popup({"maxWidth": 350});
+
+        
+            var html_017d8bfc4454158ff0f76b7da86f9697 = $(`<div id="html_017d8bfc4454158ff0f76b7da86f9697" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 14<br><b>company_name:</b> Lhyfe<br><b>project_name:</b> Perl Green Hydrogen Plant<br><b>project_country:</b> DE<br><b>project_region:</b> Saarland<br><b>project_city:</b> Perl<br><b>date_online:</b> 2027 (first half)<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 70<br><b>projected_electrolyser_capacity_MW:</b> 70<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> Water electrolysis<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.lhyfe.com/<br><b>initial_capacity_reference:</b> https://cen.acs.org/environment/Lhyfe-plans-green-hydrogen-plant/101/i23<br><b>projected_capacity_reference:</b> https://cen.acs.org/environment/Lhyfe-plans-green-hydrogen-plant/101/i23<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://cen.acs.org/environment/Lhyfe-plans-green-hydrogen-plant/101/i23<br></div></div>`)[0];
+            popup_b1e04633274046e0bbde5ee5ef81f441.setContent(html_017d8bfc4454158ff0f76b7da86f9697);
+        
+
+        marker_049c420f0ae05166d1a887cd8fb41e6c.bindPopup(popup_b1e04633274046e0bbde5ee5ef81f441)
+        ;
+
+        
+    
+    
+            var marker_f00bbd366e66eca0c8c7d6a83476bf14 = L.marker(
+                [45.3091476811621, 5.90651219395378],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_7c423dd7018cbfb2674f65c5709c5403 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f00bbd366e66eca0c8c7d6a83476bf14.setIcon(icon_7c423dd7018cbfb2674f65c5709c5403);
+        
+    
+        var popup_99b15b4811ba40abc5500f7c2ff97928 = L.popup({"maxWidth": 350});
+
+        
+            var html_011371a6bf775fce4a28ef0dd3fce80a = $(`<div id="html_011371a6bf775fce4a28ef0dd3fce80a" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 15<br><b>company_name:</b> Lhyfe<br><b>project_name:</b> Lubmin Green Hydrogen Plant<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Vorpommern<br><b>project_city:</b> Lubmin<br><b>Project Latitude:</b> 45.3091476811621<br><b>Project Longitude:</b> 5.90651219395378<br><b>date_online:</b> 2029<br><b>project_status:</b> Development phase<br><b>initial_electrolyser_capacity_MW:</b> 800<br><b>projected_electrolyser_capacity_MW:</b> 800<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.lhyfe.com/<br><b>initial_capacity_reference:</b> https://renews.biz/89829/lhyfe-unveils-800mw-german-electrolyser-project/<br><b>projected_capacity_reference:</b> https://renews.biz/89829/lhyfe-unveils-800mw-german-electrolyser-project/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://renews.biz/89829/lhyfe-unveils-800mw-german-electrolyser-project/<br></div></div>`)[0];
+            popup_99b15b4811ba40abc5500f7c2ff97928.setContent(html_011371a6bf775fce4a28ef0dd3fce80a);
+        
+
+        marker_f00bbd366e66eca0c8c7d6a83476bf14.bindPopup(popup_99b15b4811ba40abc5500f7c2ff97928)
+        ;
+
+        
+    
+    
+            var marker_9394e7bf123f084f0fc88ab28be83669 = L.marker(
+                [53.550341, 10.000654],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_5e5a0b055668104117a64328d9122b69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9394e7bf123f084f0fc88ab28be83669.setIcon(icon_5e5a0b055668104117a64328d9122b69);
+        
+    
+        var popup_72caa78a726bc10e0626242df8cbc33e = L.popup({"maxWidth": 350});
+
+        
+            var html_d389173fea6bf0d65ffda78dfe14fb3c = $(`<div id="html_d389173fea6bf0d65ffda78dfe14fb3c" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 16<br><b>company_name:</b> Vattenfall<br><b>project_name:</b> Moorburg Green Energy Hub<br><b>project_country:</b> DE<br><b>project_region:</b> Hamburg<br><b>project_city:</b> Hamburg<br><b>date_online:</b> Expected in the mid-2020s<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 800<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No specific technology mentioned<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://group.vattenfall.com/<br><b>initial_capacity_reference:</b> https://www.mhi.com/news/210122.html<br><b>projected_capacity_reference:</b> https://www.mhi.com/news/210122.html<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> https://www.mhi.com/news/210122.html<br><b>hydrogen_pipeline_reference:</b> https://www.mhi.com/news/210122.html<br></div></div>`)[0];
+            popup_72caa78a726bc10e0626242df8cbc33e.setContent(html_d389173fea6bf0d65ffda78dfe14fb3c);
+        
+
+        marker_9394e7bf123f084f0fc88ab28be83669.bindPopup(popup_72caa78a726bc10e0626242df8cbc33e)
+        ;
+
+        
+    
+    
+            var marker_b875586c16eb421cd872579df7bf7aac = L.marker(
+                [53.3602460839282, 7.21164166207105],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_b7e03bc16c097ded1c2902a206160f35 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b875586c16eb421cd872579df7bf7aac.setIcon(icon_b7e03bc16c097ded1c2902a206160f35);
+        
+    
+        var popup_700fbcef90ba06c2838fa8185ead70ee = L.popup({"maxWidth": 350});
+
+        
+            var html_34ee4a8ac228ebb1a7922e71448d316b = $(`<div id="html_34ee4a8ac228ebb1a7922e71448d316b" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 17<br><b>company_name:</b> EWE<br><b>project_name:</b> Clean Hydrogen Coastline - Emden<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Emden<br><b>Project Latitude:</b> 53.3602460839282<br><b>Project Longitude:</b> 7.21164166207105<br><b>date_online:</b> 2027<br><b>project_status:</b> FID/under construction<br><b>initial_electrolyser_capacity_MW:</b> 280<br><b>projected_electrolyser_capacity_MW:</b> 320<br><b>initial_production_volume:</b> 26000<br><b>initial_tonnes_per_MW:</b> 92<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> Siemens<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br><b>company_website:</b> https://www.ewe.de/<br><b>initial_capacity_reference:</b> https://www.globalhydrogenreview.com/hydrogen/30082024/drees-sommer-manages-ewes-large-scale-hydrogen-project-in-germany/<br><b>projected_capacity_reference:</b> https://www.globalhydrogenreview.com/hydrogen/30082024/drees-sommer-manages-ewes-large-scale-hydrogen-project-in-germany/<br><b>electrolyser_supplier_reference:</b> https://www.siemens-energy.com/global/en/home/press-releases/siemens-energy-wins-contract-for-large-scale-hydrogen-project-fr.html<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_700fbcef90ba06c2838fa8185ead70ee.setContent(html_34ee4a8ac228ebb1a7922e71448d316b);
+        
+
+        marker_b875586c16eb421cd872579df7bf7aac.bindPopup(popup_700fbcef90ba06c2838fa8185ead70ee)
+        ;
+
+        
+    
+    
+            var marker_f2573f907a48641cf846d2411700be4c = L.marker(
+                [53.1564853537341, 8.69234048739408],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_68867a8548537dd0f9c8e47f2f524881 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f2573f907a48641cf846d2411700be4c.setIcon(icon_68867a8548537dd0f9c8e47f2f524881);
+        
+    
+        var popup_6fc2d6b07686fa304fc764929bd195b1 = L.popup({"maxWidth": 350});
+
+        
+            var html_273664b0c12c9acfaef8095b720f8982 = $(`<div id="html_273664b0c12c9acfaef8095b720f8982" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 18<br><b>company_name:</b> EWE<br><b>project_name:</b> Clean Hydrogen Coastline - Bremen<br><b>project_country:</b> DE<br><b>project_region:</b> Bremen<br><b>project_city:</b> Bremen<br><b>Project Latitude:</b> 53.1564853537341<br><b>Project Longitude:</b> 8.69234048739408<br><b>date_online:</b> No Information<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 50<br><b>projected_electrolyser_capacity_MW:</b> 50<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.ewe.de/<br><b>initial_capacity_reference:</b> https://www.globalhydrogenreview.com/hydrogen/30082024/drees-sommer-manages-ewes-large-scale-hydrogen-project-in-germany/<br><b>projected_capacity_reference:</b> https://www.globalhydrogenreview.com/hydrogen/30082024/drees-sommer-manages-ewes-large-scale-hydrogen-project-in-germany/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_6fc2d6b07686fa304fc764929bd195b1.setContent(html_273664b0c12c9acfaef8095b720f8982);
+        
+
+        marker_f2573f907a48641cf846d2411700be4c.bindPopup(popup_6fc2d6b07686fa304fc764929bd195b1)
+        ;
+
+        
+    
+    
+            var marker_9765f52bb52c69826bc29d534bbc9504 = L.marker(
+                [53.3670541, 7.2058304],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_e8d29a38d88d0dfa7e3737572e5fcc09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9765f52bb52c69826bc29d534bbc9504.setIcon(icon_e8d29a38d88d0dfa7e3737572e5fcc09);
+        
+    
+        var popup_e05d26eb2cfbe7cfd1a0eedf7694e95e = L.popup({"maxWidth": 350});
+
+        
+            var html_31da6c72c62caa7b25f0da705c1d5587 = $(`<div id="html_31da6c72c62caa7b25f0da705c1d5587" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 19<br><b>company_name:</b> Statkraft<br><b>project_name:</b> Emden Green Hydrogen Project<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Emden<br><b>date_online:</b> 2025 (pilot), 2030 (full capacity)<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 10<br><b>projected_electrolyser_capacity_MW:</b> 200<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> ALK<br><b>electrolysis_supplier:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.statkraft.com/<br><b>initial_capacity_reference:</b> https://www.statkraft.com/newsroom/news-and-stories/2023/targets-for-germany-statkraft-grows-with-green-hydrogen-wind-and-solar/<br><b>projected_capacity_reference:</b> https://www.statkraft.com/newsroom/news-and-stories/2023/targets-for-germany-statkraft-grows-with-green-hydrogen-wind-and-solar/<br><b>electrolyser_supplier_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> https://www.statkraft.com/newsroom/news-and-stories/2023/targets-for-germany-statkraft-grows-with-green-hydrogen-wind-and-solar/<br></div></div>`)[0];
+            popup_e05d26eb2cfbe7cfd1a0eedf7694e95e.setContent(html_31da6c72c62caa7b25f0da705c1d5587);
+        
+
+        marker_9765f52bb52c69826bc29d534bbc9504.bindPopup(popup_e05d26eb2cfbe7cfd1a0eedf7694e95e)
+        ;
+
+        
+    
+    
+            var marker_8036d82cc942bb526b56d24f72574521 = L.marker(
+                [53.506730655775, 9.93654982232032],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_6032be15fef5c88d62831506f8861901 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8036d82cc942bb526b56d24f72574521.setIcon(icon_6032be15fef5c88d62831506f8861901);
+        
+    
+        var popup_40b2eb9db339212d8f4f52263cb7ae94 = L.popup({"maxWidth": 350});
+
+        
+            var html_b36b7e21d72665fcb14d6d13086494f1 = $(`<div id="html_b36b7e21d72665fcb14d6d13086494f1" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 20<br><b>company_name:</b> Luxcara/Hamburger Energiewerke<br><b>project_name:</b> Hamburg Green Hydrogen Hub<br><b>project_country:</b> DE<br><b>project_region:</b> Hamburg<br><b>project_city:</b> Hamburg<br><b>Project Latitude:</b> 53.506730655775<br><b>Project Longitude:</b> 9.93654982232032<br><b>date_online:</b> 2027<br><b>project_status:</b> -<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 10000<br><b>initial_tonnes_per_MW:</b> 100<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> Siemens<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br><b>company_website:</b> https://www.hghh.eu/en<br><b>initial_capacity_reference:</b> https://www.hghh.eu/en<br><b>projected_capacity_reference:</b> https://www.hghh.eu/en<br><b>electrolyser_supplier_reference:</b> https://www.hghh.eu/en<br><b>hydrogen_pipeline_reference:</b> https://renewablesnow.com/news/germany-advances-major-hydrogen-infrastructure-projects-in-hamburg-866750/<br></div></div>`)[0];
+            popup_40b2eb9db339212d8f4f52263cb7ae94.setContent(html_b36b7e21d72665fcb14d6d13086494f1);
+        
+
+        marker_8036d82cc942bb526b56d24f72574521.bindPopup(popup_40b2eb9db339212d8f4f52263cb7ae94)
+        ;
+
+        
+    
+    
+            var marker_eec33ac8021fb16075ba4fa4eaa6c4e2 = L.marker(
+                [51.515782682635, 13.3481793824307],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_746bf8fc650d766c008a3c4dbc4e6c05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eec33ac8021fb16075ba4fa4eaa6c4e2.setIcon(icon_746bf8fc650d766c008a3c4dbc4e6c05);
+        
+    
+        var popup_f5be035d376fa0276a7f11987ce5354b = L.popup({"maxWidth": 350});
+
+        
+            var html_d8561d872017b8e42b8c66462bd52936 = $(`<div id="html_d8561d872017b8e42b8c66462bd52936" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 21<br><b>company_name:</b> HY2GEN<br><b>project_name:</b> Jangada<br><b>project_country:</b> DE<br><b>project_region:</b> Brandenburg<br><b>project_city:</b> Drewitz<br><b>Project Latitude:</b> 51.515782682635<br><b>Project Longitude:</b> 13.3481793824307<br><b>date_online:</b> 2028<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 64000 tonnes of SAF<br><b>initial_tonnes_per_MW:</b> 640 (SAF)<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> 500<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No<br><b>hydrogen_pipeline:</b> No<br><b>company_website:</b> https://www.hy2gen.com/jangada<br><b>initial_capacity_reference:</b> https://www.hy2gen.com/jangada<br><b>projected_capacity_reference:</b> https://www.hy2gen.com/jangada<br></div></div>`)[0];
+            popup_f5be035d376fa0276a7f11987ce5354b.setContent(html_d8561d872017b8e42b8c66462bd52936);
+        
+
+        marker_eec33ac8021fb16075ba4fa4eaa6c4e2.bindPopup(popup_f5be035d376fa0276a7f11987ce5354b)
+        ;
+
+        
+    
+    
+            var marker_e45e43ce8db95247fc38d1e6b7130b54 = L.marker(
+                [53.5295406441506, 8.12969320043866],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_1b1c4f0b9a522dfc069b27cf31b81add = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e45e43ce8db95247fc38d1e6b7130b54.setIcon(icon_1b1c4f0b9a522dfc069b27cf31b81add);
+        
+    
+        var popup_8daa08f853576c4082a3bf38e769bb63 = L.popup({"maxWidth": 350});
+
+        
+            var html_feba5ed24c204362279cb913345b2a6c = $(`<div id="html_feba5ed24c204362279cb913345b2a6c" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 22<br><b>company_name:</b> VoltH2<br><b>project_name:</b> Wilhelmshaven<br><b>project_country:</b> DE<br><b>project_region:</b> Lower Saxony<br><b>project_city:</b> Wilhelmshaven<br><b>Project Latitude:</b> 53.5295406441506<br><b>Project Longitude:</b> 8.12969320043866<br><b>date_online:</b> 2028<br><b>project_status:</b> Feasibility Study<br><b>initial_electrolyser_capacity_MW:</b> 100<br><b>projected_electrolyser_capacity_MW:</b> 100<br><b>initial_production_volume:</b> 8000<br><b>initial_tonnes_per_MW:</b> 80<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br><b>initial_capacity_reference:</b> https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/electric-power/030623-volth2-targets-mid-sized-green-hydrogen-projects-to-optimize-offshore-wind<br><b>projected_capacity_reference:</b> https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/electric-power/030623-volth2-targets-mid-sized-green-hydrogen-projects-to-optimize-offshore-wind<br><b>electrolyser_supplier_reference:</b> No Information<br><b>gas_pipeline_reference:</b> No Information<br><b>hydrogen_pipeline_reference:</b> No Information<br></div></div>`)[0];
+            popup_8daa08f853576c4082a3bf38e769bb63.setContent(html_feba5ed24c204362279cb913345b2a6c);
+        
+
+        marker_e45e43ce8db95247fc38d1e6b7130b54.bindPopup(popup_8daa08f853576c4082a3bf38e769bb63)
+        ;
+
+        
+    
+    
+            var marker_196fa71ffa0d1326698a056eca9874c2 = L.marker(
+                [53.2115383003904, 12.2184661748563],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_cb10f0994202a0f547b9989d95d17791 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_196fa71ffa0d1326698a056eca9874c2.setIcon(icon_cb10f0994202a0f547b9989d95d17791);
+        
+    
+        var popup_9c2b7d9554261271d761f522b651ce9d = L.popup({"maxWidth": 350});
+
+        
+            var html_dace7df21bc4461ab4a184655208c451 = $(`<div id="html_dace7df21bc4461ab4a184655208c451" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 23<br><b>company_name:</b> Enertrag<br><b>project_name:</b> Prignitz-Falkenhagen industrial park<br><b>project_country:</b> DE<br><b>project_region:</b> Brandenburg<br><b>project_city:</b> Falkenhagen<br><b>Project Latitude:</b> 53.2115383003904<br><b>Project Longitude:</b> 12.2184661748563<br><b>date_online:</b> 2027<br><b>project_status:</b> No Information<br><b>initial_electrolyser_capacity_MW:</b> 130<br><b>projected_electrolyser_capacity_MW:</b> 130<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> 200<br><b>ipcei_subsidy:</b> Yes<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br></div></div>`)[0];
+            popup_9c2b7d9554261271d761f522b651ce9d.setContent(html_dace7df21bc4461ab4a184655208c451);
+        
+
+        marker_196fa71ffa0d1326698a056eca9874c2.bindPopup(popup_9c2b7d9554261271d761f522b651ce9d)
+        ;
+
+        
+    
+    
+            var marker_b5e83614b1c2fca9c482e94563f1a6ba = L.marker(
+                [51.2605273710641, 12.3503662197016],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_a9f9854c6c9e813a732e36f55a3d876d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b5e83614b1c2fca9c482e94563f1a6ba.setIcon(icon_a9f9854c6c9e813a732e36f55a3d876d);
+        
+    
+        var popup_640a163ce62d4b15e9bdae7d39d51adf = L.popup({"maxWidth": 350});
+
+        
+            var html_a078e29649b5f2026d9385d7a5bc5efb = $(`<div id="html_a078e29649b5f2026d9385d7a5bc5efb" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 24<br><b>company_name:</b> Mibrag<br><b>project_name:</b> Profen<br><b>project_country:</b> DE<br><b>project_region:</b> Saxony-Anhalt<br><b>project_city:</b> Hohenmölsen<br><b>Project Latitude:</b> 51.2605273710641<br><b>Project Longitude:</b> 12.3503662197016<br><b>date_online:</b> 2026<br><b>project_status:</b> No Information<br><b>initial_electrolyser_capacity_MW:</b> 90<br><b>projected_electrolyser_capacity_MW:</b> 90<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> 251<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> No Information<br></div></div>`)[0];
+            popup_640a163ce62d4b15e9bdae7d39d51adf.setContent(html_a078e29649b5f2026d9385d7a5bc5efb);
+        
+
+        marker_b5e83614b1c2fca9c482e94563f1a6ba.bindPopup(popup_640a163ce62d4b15e9bdae7d39d51adf)
+        ;
+
+        
+    
+    
+            var marker_f4ed8b7dbcf3aa9336a9bf610d348c48 = L.marker(
+                [54.1302986718926, 13.6264433712111],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_5c9dd2a13f4c83741193b079a472640d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f4ed8b7dbcf3aa9336a9bf610d348c48.setIcon(icon_5c9dd2a13f4c83741193b079a472640d);
+        
+    
+        var popup_9880931a0daf9c29b007d87c06b5e94e = L.popup({"maxWidth": 350});
+
+        
+            var html_33e2dab39ed67b06f3e20d5e8b099e18 = $(`<div id="html_33e2dab39ed67b06f3e20d5e8b099e18" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 25<br><b>company_name:</b> Deutsche ReGas<br><b>project_name:</b> Lubmin<br><b>project_country:</b> DE<br><b>project_region:</b> Mecklenburg-Vorpommern<br><b>project_city:</b> Lubmin<br><b>Project Latitude:</b> 54.1302986718926<br><b>Project Longitude:</b> 13.6264433712111<br><b>date_online:</b> 2026<br><b>project_status:</b> post-FEED<br><b>initial_electrolyser_capacity_MW:</b> 200<br><b>projected_electrolyser_capacity_MW:</b> 500<br><b>initial_production_volume:</b> 30000<br><b>initial_tonnes_per_MW:</b> 150<br><b>electrolysis_technology:</b> PEM<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> Yes<br><b>hydrogen_pipeline:</b> Yes<br></div></div>`)[0];
+            popup_9880931a0daf9c29b007d87c06b5e94e.setContent(html_33e2dab39ed67b06f3e20d5e8b099e18);
+        
+
+        marker_f4ed8b7dbcf3aa9336a9bf610d348c48.bindPopup(popup_9880931a0daf9c29b007d87c06b5e94e)
+        ;
+
+        
+    
+    
+            var marker_33afed993989c30e49cad2a140160bd2 = L.marker(
+                [51.9385698082444, 7.17208771040186],
+                {}
+            ).addTo(marker_cluster_af28e84accfdb6a0899c8250d2501d80);
+        
+    
+            var icon_7b4fd73330027adcfd76d50efc92b105 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_33afed993989c30e49cad2a140160bd2.setIcon(icon_7b4fd73330027adcfd76d50efc92b105);
+        
+    
+        var popup_583379cf2f2d3b58678a8834d7c88aa2 = L.popup({"maxWidth": 350});
+
+        
+            var html_25f5f4e0c95401d9cfd917c248e06d64 = $(`<div id="html_25f5f4e0c95401d9cfd917c248e06d64" style="width: 100.0%; height: 100.0%;"><div style='width: 300px;'><b>Column1:</b> 26<br><b>company_name:</b> EMERGY/Gelsenwasser/Stadtwerke Münster/Trianel<br><b>project_name:</b> Coesfeld<br><b>project_country:</b> DE<br><b>project_region:</b> North Rhine-Westphalia<br><b>project_city:</b> Coesfeld<br><b>Project Latitude:</b> 51.9385698082444<br><b>Project Longitude:</b> 7.17208771040186<br><b>date_online:</b> 2028<br><b>project_status:</b> Early Stage<br><b>initial_electrolyser_capacity_MW:</b> 50<br><b>projected_electrolyser_capacity_MW:</b> 50<br><b>initial_production_volume:</b> No Information<br><b>initial_tonnes_per_MW:</b> No Information<br><b>electrolysis_technology:</b> No Information<br><b>electrolysis_supplier:</b> No Information<br><b>project_capex:</b> No Information<br><b>ipcei_subsidy:</b> No Information<br><b>gas_pipeline:</b> No Information<br><b>hydrogen_pipeline:</b> Yes<br></div></div>`)[0];
+            popup_583379cf2f2d3b58678a8834d7c88aa2.setContent(html_25f5f4e0c95401d9cfd917c248e06d64);
+        
+
+        marker_33afed993989c30e49cad2a140160bd2.bindPopup(popup_583379cf2f2d3b58678a8834d7c88aa2)
+        ;
+
+        
+    
+</script>
+</html>
